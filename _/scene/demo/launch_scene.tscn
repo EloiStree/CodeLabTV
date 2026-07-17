@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cty7dvxlw3vay"]
+
+[node name="LaunchScene" type="Node3D" unique_id=735124118]
+
+[node name="Control" type="Control" parent="." unique_id=1817355810]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=369704269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello you.
+
+CodeLab TV is an game to learn code by playing around ;)
+
+They are not input:
+- no keyboard
+- no gamepad
+- ...
+
+To play this game you will need to send message with UDP or Websocket.
+To show that you understand.
+
+By sending the text \"Hello World\"
+Or the byte `42`"
