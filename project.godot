@@ -13,7 +13,7 @@ config_version=5
 config/name="Code Lab TV"
 config/description="An application to learn code from mini game on Android TVs. No input, only code."
 run/main_scene="uid://cty7dvxlw3vay"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
@@ -32,3 +32,5 @@ window/stretch/mode="canvas_items"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
+viewport/transparent_background=true
