@@ -12,7 +12,7 @@ The first challenge starts in the main menu, where you must send a "Hello, World
 
 > I'm Eloi Stree, a game development teacher inspired by OGame and CodinGame multiplayer. I am creating a lightweight app to practice coding on your TV and potato laptop. Train here with free mini-games, then join us on sponsor-supported tournaments when you're ready to compete on Code Lab Cinema.   
   
-_Following the same philosophy, CodeLabCinema is designed for games with 16 to 256 players on a single screen, making it ideal for organizing coding tournaments and multiplayer events in cinema venues._    
+_Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/CodeLabCinema) is designed for games with 16 to 256 players on a single screen, making it ideal for organizing coding tournaments and multiplayer events in cinema venues._    
 
 Discord: https://eloistree.github.io/r/discord   
 GitHub Rlease: https://github.com/EloiStree/CodeLabTV/releases   
