@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://yxfimt0e7o0b" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/udp_io_listen_thread_udp_byte.gd" id="2_rktb2"]
 [ext_resource type="Script" uid="uid://bya86h4uvfpnl" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/udp_io_listen_thread_udp_text.gd" id="3_m3g50"]
 [ext_resource type="Texture2D" uid="uid://drc5mycd6s224" path="res://_/2d/qr/qr_codelabtv_wiki_url.png" id="4_8cdyi"]
-[ext_resource type="Texture2D" uid="uid://cqg6q76onyx8w" path="res://addons/2024_10_16_gdp_blocks_color/icon.png" id="5_vc65h"]
+[ext_resource type="Texture2D" uid="uid://chljxywwkgybj" path="res://addons/2024_10_16_gdp_blocks_color/assets/reference/blocks_color_256x256.png" id="5_3pb37"]
 [ext_resource type="Script" uid="uid://ctvfwsy4t7fdj" path="res://addons/2025_10_27_gdp_udp_in_out_gate/scripts/udp_io_byte_to_text_debug.gd" id="6_lcgs8"]
+[ext_resource type="Script" uid="uid://esy5e1gvr8ny" path="res://_/script/unstored/open_url/labtv_open_url.gd" id="6_rktb2"]
 [ext_resource type="Script" uid="uid://pyiusioc6c1r" path="res://_/script/labtv_hello_42_skill_check.gd" id="7_sq4xf"]
 [ext_resource type="PackedScene" uid="uid://bsvv0xx3cbmxt" path="res://_/scene/demo/hello_world_checked/scene_hello_world_checked.tscn" id="8_3pb37"]
 [ext_resource type="PackedScene" uid="uid://bin0sxy3l2kiu" path="res://addons/2025_10_28_gdp_trusted_websocket/scenes/prefab/prefab_tbio_ws_default_server.tscn" id="9_fqkjn"]
@@ -21,6 +22,7 @@ list_targets_ipv4 = Array[String](["192.168.137.1", "192.168.1.1", "127.0.0.1"])
 metadata/_custom_type_script = "uid://bjadg744sf2of"
 
 [node name="Timer" type="Timer" parent="PushUdpOutToTargets" unique_id=187369541]
+wait_time = 10.0
 autostart = true
 
 [node name="UdpThreadDispatcherByte" type="Node" parent="." unique_id=1670142008]
@@ -39,11 +41,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control" unique_id=369704269]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=481773390]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Control/ColorRect" unique_id=2117451317]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.99
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ColorRect/ColorRect2" unique_id=1818163893]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7161459
+anchor_top = 0.43055555
+anchor_right = 0.9921876
+anchor_bottom = 0.7731481
+offset_left = 9.299927
+offset_top = -1.499939
+offset_right = 9.299927
+offset_bottom = -1.4998779
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3pb37")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/ColorRect/ColorRect2" unique_id=369704269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.688917
+offset_top = 12.2
+offset_right = -19.199951
+offset_bottom = -10.800049
 grow_horizontal = 2
 grow_vertical = 2
 text = "Hello you.
@@ -61,16 +104,17 @@ To show that you understand.
 By sending the text \"Hello World\"
 Or the byte `42`"
 
-[node name="LearnMoreUrlQR" type="Control" parent="Control" unique_id=575910836]
+[node name="LearnMoreUrlQR" type="Control" parent="Control/ColorRect/ColorRect2" unique_id=575910836]
 layout_mode = 1
 anchor_left = 0.70000005
 anchor_right = 0.99700004
 anchor_bottom = 0.423
-offset_left = -0.00012207031
-offset_right = -0.2401123
-offset_bottom = 0.16000366
+offset_left = 7.6799316
+offset_top = -10.8
+offset_right = 7.4399414
+offset_bottom = -10.639984
 
-[node name="TextureRect" type="TextureRect" parent="Control/LearnMoreUrlQR" unique_id=151520852]
+[node name="TextureRect" type="TextureButton" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1560963146]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -78,11 +122,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_8cdyi")
-expand_mode = 3
+texture_normal = ExtResource("4_8cdyi")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LearnMoreURL" type="Label" parent="Control/LearnMoreUrlQR" unique_id=1974246567]
+[node name="LabTvOpenUrl" type="Node" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" unique_id=640095119]
+script = ExtResource("6_rktb2")
+_url_to_open = "https://github.com/EloiStree/CodeLabTV/wiki"
+metadata/_custom_type_script = "uid://esy5e1gvr8ny"
+
+[node name="LearnMoreURL" type="Label" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1974246567]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -94,85 +143,58 @@ label_settings = SubResource("LabelSettings_luvw2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1818163893]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.731
-anchor_top = 0.70500004
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_vc65h")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=419513987]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect/ColorRect2" unique_id=419513987]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.86
 anchor_right = 0.514
 anchor_bottom = 0.98600006
-offset_top = 7.200012
-offset_right = -0.8800049
-offset_bottom = 0.11987305
+offset_left = -19.199999
+offset_top = 14.976074
+offset_right = -20.080017
+offset_bottom = 7.895874
 accessibility_region = true
 metadata/_edit_use_anchors_ = true
 
-[node name="LabelText" type="Label" parent="Control/HBoxContainer" unique_id=1218991386]
+[node name="LabelText" type="Label" parent="Control/ColorRect/ColorRect2/HBoxContainer" unique_id=1218991386]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 
-[node name="LabelByte" type="Label" parent="Control/HBoxContainer" unique_id=357393468]
+[node name="LabelByte" type="Label" parent="Control/ColorRect/ColorRect2/HBoxContainer" unique_id=357393468]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 
-[node name="Code" type="Node" parent="Control/HBoxContainer/LabelByte" unique_id=1013896800]
+[node name="Code" type="Node" parent="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" unique_id=1013896800]
 script = ExtResource("6_lcgs8")
 metadata/_custom_type_script = "uid://bllyrren6tpgy"
 
-[node name="CodeEdit" type="CodeEdit" parent="Control" unique_id=230012535]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect2" unique_id=10027370]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.245
-anchor_top = 0.381
-anchor_right = 0.72
-anchor_bottom = 0.95400006
-offset_left = -0.4000244
-offset_top = -0.480011
-offset_right = -0.4000244
-offset_bottom = -0.32006836
-text = "import socket
-import struct
-import time
+anchor_top = 0.38333333
+anchor_right = 0.65000004
+anchor_bottom = 0.99600005
+offset_left = -19.199999
+offset_top = -2.519928
+offset_right = -19.200073
+offset_bottom = -2.2000732
+text = "Designed for Android TV, this application lets you learn coding by playing a collection of small games directly on your TV.     
+It is completely free, and part of the Code Lab ecosystem, a non-profit personnal initiative dedicated to organizing coding tournaments for developers.     
 
-HOST = \"192.168.178.163\"
-PORT_BYTE = 3615
-PORT_TEXT = 3614
+Because Android TV devices typically have limited CPU power and no dedicated graphics card, the games are designed to run on modest hardware such as Raspberry Pi boards and Android TV sticks. So don't expect cutting-edge graphics—gameplay and learning come first. 😉
 
-while True:
-    try:
-        # Create UDP socket
-        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-            # Send the string
-            s.sendto(b\"Hello World\", (HOST, PORT_TEXT))
-            print(\"Sent text: Hello World\")
-            
-            # Wait 2 seconds
-            time.sleep(2)
-            
-            # Send a 32-bit little-endian integer
-            s.sendto(struct.pack(\"<I\", 42), (HOST, PORT_BYTE))
-            print(\"Sent integer: 42\")
-            
-            print(\"---\")
+The game supports UDP and WebSocket as its input methods. It is not designed to support keyboard, gamepad, or mouse input. 😉      
 
-    except OSError as e:
-        print(f\"Socket error: {e}\")
+The goal is to learn programming from the very beginning.       
+The first challenge starts in the main menu, where you must send a \"Hello, World!\" message via UDP or WebSocket to begin.       
 
-    time.sleep(1)"
+> I'm Eloi Stree, a game development teacher inspired by OGame and CodinGame multiplayer. I am creating a lightweight app to practice coding on your TV and potato laptop. Train here with free mini-games, then join us on sponsor-supported tournaments when you're ready to compete on Code Lab Cinema.   
+  
+_Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/CodeLabCinema) is designed for games with 16 to 256 players on a single screen, making it ideal for organizing coding tournaments and multiplayer events in cinema venues._    "
+fit_content = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CodeLabTvHello42SkillCheck" type="Node" parent="." unique_id=1918497601]
 script = ExtResource("7_sq4xf")
@@ -182,11 +204,12 @@ metadata/_custom_type_script = "uid://pyiusioc6c1r"
 [node name="TbioWsDefaultServer" parent="." unique_id=705473434 instance=ExtResource("9_fqkjn")]
 
 [connection signal="timeout" from="PushUdpOutToTargets/Timer" to="PushUdpOutToTargets" method="push_random_text_and_byte"]
-[connection signal="on_message_received" from="UdpThreadDispatcherByte" to="Control/HBoxContainer/LabelByte/Code" method="push_byte_packed_to_debug"]
+[connection signal="on_message_received" from="UdpThreadDispatcherByte" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" method="push_byte_packed_to_debug"]
 [connection signal="on_message_received" from="UdpThreadDispatcherByte" to="CodeLabTvHello42SkillCheck" method="check_for_specific_byte_pack_as_integer"]
-[connection signal="message_received" from="UdpThreadDispatcherUtf8" to="Control/HBoxContainer/LabelText" method="set_text"]
+[connection signal="message_received" from="UdpThreadDispatcherUtf8" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelText" method="set_text"]
 [connection signal="message_received" from="UdpThreadDispatcherUtf8" to="CodeLabTvHello42SkillCheck" method="check_for_specific_text"]
-[connection signal="on_debug_last_byte_packed" from="Control/HBoxContainer/LabelByte/Code" to="Control/HBoxContainer/LabelByte" method="set_text"]
+[connection signal="button_down" from="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" to="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect/LabTvOpenUrl" method="open_url_in_inspector"]
+[connection signal="on_debug_last_byte_packed" from="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" method="set_text"]
 [connection signal="on_received_byte" from="TbioWsDefaultServer/TbioWsJoinPeersIdAsOnePeer" to="CodeLabTvHello42SkillCheck" method="check_for_specific_byte_pack_as_integer"]
 [connection signal="on_received_text" from="TbioWsDefaultServer/TbioWsJoinPeersIdAsOnePeer" to="CodeLabTvHello42SkillCheck" method="check_for_specific_text"]
 

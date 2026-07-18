@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dh5gsoxyvbhiu"]
+
+[ext_resource type="Script" uid="uid://dj2dfd57cjrw3" path="res://addons/2026_07_18_gdp_trusted_websocket_peer/script/server_test.gd" id="1_hkeu3"]
+
+[node name="Node3D" type="Node3D" unique_id=204247706]
+
+[node name="NodeServer" type="Node" parent="." unique_id=616968661]
+script = ExtResource("1_hkeu3")

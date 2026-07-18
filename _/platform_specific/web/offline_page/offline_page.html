@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Offline</title>
+
+<style>
+html,body{
+    margin:0;
+    overflow:hidden;
+    background:#000;
+    font-family:Consolas,monospace;
+    color:#00ff66;
+    height:100%;
+}
+
+canvas{
+    position:fixed;
+    inset:0;
+}
+
+.center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:10;
+    text-shadow:0 0 10px #00ff66;
+}
+
+h1{
+    font-size:48px;
+    margin:0;
+    letter-spacing:4px;
+}
+
+p{
+    font-size:18px;
+    opacity:.9;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 28px;
+    background:#000;
+    border:2px solid #00ff66;
+    color:#00ff66;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:#00ff66;
+    color:#000;
+    box-shadow:0 0 20px #00ff66;
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="center">
+    <h1>OFFLINE</h1>
+    <p>Connection to the server has been lost.</p>
+    <button onclick="location.reload()">Reconnect</button>
+</div>
+
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+    columns=Math.floor(canvas.width/fontSize);
+    drops=[];
+
+    for(let i=0;i<columns;i++)
+        drops[i]=Math.random()*canvas.height/fontSize;
+}
+
+const chars="アァカサタナハマヤャラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters=chars.split("");
+
+const fontSize=18;
+let columns;
+let drops=[];
+
+resize();
+window.onresize=resize;
+
+function draw(){
+
+    ctx.fillStyle="rgba(0,0,0,0.05)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="#00ff66";
+    ctx.font=fontSize+"px monospace";
+
+    for(let i=0;i<drops.length;i++){
+
+        const text=letters[Math.floor(Math.random()*letters.length)];
+
+        ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+        if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+            drops[i]=0;
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw,33);
+</script>
+
+</body>
+</html>
