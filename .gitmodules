@@ -1,0 +1,9 @@
+[submodule "addons/2024_10_16_gdp_blocks_color"]
+	path = addons/2024_10_16_gdp_blocks_color
+	url = https://github.com/EloiStree/2024_10_16_gdp_blocks_color.git
+[submodule "addons/2025_10_28_gdp_trusted_websocket"]
+	path = addons/2025_10_28_gdp_trusted_websocket
+	url = https://github.com/EloiStree/2025_10_28_gdp_trusted_websocket.git
+[submodule "addons/2025_10_27_gdp_udp_in_out_gate"]
+	path = addons/2025_10_27_gdp_udp_in_out_gate
+	url = https://github.com/EloiStree/2025_10_27_gdp_udp_in_out_gate

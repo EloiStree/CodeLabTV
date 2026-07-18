@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsvv0xx3cbmxt"]
+
+[node name="FirstScene" type="Node3D" unique_id=445733550]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356130566]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=891871922]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.42745098, 0, 1, 1)
