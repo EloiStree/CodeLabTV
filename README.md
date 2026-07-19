@@ -15,12 +15,12 @@ The first challenge starts in the main menu, where you must send a "Hello, World
 _Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/CodeLabCinema) is designed for games with 16 to 256 players on a single screen, making it ideal for organizing coding tournaments and multiplayer events in cinema venues._    
 
 **Discord:** https://eloistree.github.io/r/discord   
-**GitHub Rlease:** https://github.com/EloiStree/CodeLabTV/releases   
+**GitHub Rlease:** ~https://github.com/EloiStree/CodeLabTV/releases~   
 **Itch.io:** https://eloistree.itch.io/codelabtv   
 **Steam:** -   
-**Android TV:** -        
-**Pi-Apps:** -         
-**F-Droid:** -         
+**Android TV:** ~https://play.google.com/store/apps/details?id=be.elab.codelabtv~        
+**Pi-Apps [?](https://pi-apps.io/wiki/development/Creating-an-app/):** -         
+**F-Droid [?](https://f-droid.org/fr/docs/Submitting_to_F-Droid_Quick_Start_Guide/):** -         
 **Steam Deck:** -      
 **Ubuntu:** -   
 
