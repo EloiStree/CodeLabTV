@@ -1,4 +1,4 @@
-**Ideal Workflow:** [Create for TV](https://github.com/EloiStree/CodeLabTV) > [Test on XR](https://github.com/EloiStree/CodeLabXR)  > [Tournament on Cinema](https://github.com/EloiStree/CodeLabCinema)
+**Ideal Workflow:** [Create for TV](https://github.com/EloiStree/CodeLabTV) > [Test on XR](https://github.com/EloiStree/CodeLabXR)  > [Tournament in Cinema](https://github.com/EloiStree/CodeLabCinema)
 
 ----------
 
