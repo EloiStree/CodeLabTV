@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b2p4eairmh2cw"]
+
+[ext_resource type="Script" uid="uid://ci2188xko0jn4" path="res://addons/2026_07_20_gdp_get_ipv4_info/script/net_fetch_get_public_ipv4.gd" id="1_ibnlt"]
+
+[node name="LabelPublicIpv4" type="Label" unique_id=1042230755]
+anchors_preset = -1
+anchor_right = 0.83697915
+anchor_bottom = 0.098148145
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="NetFetchGetPublicIPv4" type="Node" parent="." unique_id=550353647]
+script = ExtResource("1_ibnlt")
+metadata/_custom_type_script = "uid://ci2188xko0jn4"
+
+[connection signal="on_public_ipv4_updated" from="NetFetchGetPublicIPv4" to="." method="set_text"]

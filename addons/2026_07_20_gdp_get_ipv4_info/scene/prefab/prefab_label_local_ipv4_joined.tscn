@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ck3hwj5udpgtb"]
+
+[ext_resource type="Script" uid="uid://b3fgay80cukig" path="res://addons/2026_07_20_gdp_get_ipv4_info/script/net_fetch_get_local_ipv4.gd" id="1_8tq04"]
+
+[node name="LabelLocalIpv4Joined" type="Label" unique_id=1398720084]
+anchors_preset = -1
+anchor_top = 0.92777777
+anchor_right = 0.98125
+anchor_bottom = 0.9925926
+offset_right = 40.0
+offset_bottom = 23.0
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NetFetchGetLocalIPv4" type="Node" parent="." unique_id=1612641230]
+script = ExtResource("1_8tq04")
+metadata/_custom_type_script = "uid://b3fgay80cukig"
+
+[connection signal="on_ipv4_list_joined_updated" from="NetFetchGetLocalIPv4" to="." method="set_text"]

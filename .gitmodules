@@ -7,3 +7,9 @@
 [submodule "addons/2025_10_27_gdp_udp_in_out_gate"]
 	path = addons/2025_10_27_gdp_udp_in_out_gate
 	url = https://github.com/EloiStree/2025_10_27_gdp_udp_in_out_gate
+[submodule "addons/2026_07_19_gdp_roller_wheel"]
+	path = addons/2026_07_19_gdp_roller_wheel
+	url = https://github.com/EloiStree/2026_07_19_gdp_roller_wheel.git
+[submodule "addons/2026_07_20_gdp_get_ipv4_info"]
+	path = addons/2026_07_20_gdp_get_ipv4_info
+	url = https://github.com/EloiStree/2026_07_20_gdp_get_ipv4_info.git

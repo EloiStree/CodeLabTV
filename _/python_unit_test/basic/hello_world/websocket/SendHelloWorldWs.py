@@ -2,8 +2,12 @@ import asyncio
 import websockets
 import struct
 
+
+ip_address = "ws://192.168.178.139:3616"
+
+
 class GodotMultiplayerClient:
-    def __init__(self, uri="ws://127.0.0.1:3616"):
+    def __init__(self, uri=ip_address):
         self.uri = uri
         self.websocket = None
         self.peer_id = 1  # Godot multiplayer peer ID
@@ -103,7 +107,7 @@ class GodotMultiplayerClient:
 # Example usage
 async def main():
     # Use the raw WebSocket approach (Option 1)
-    client = GodotMultiplayerClient("ws://127.0.0.1:3616")
+    client = GodotMultiplayerClient(ip_address)
     
     if await client.connect():
         # Send raw text (this will work with Option 1 server)

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cyq3wlnvpdppe"]
+
+[ext_resource type="Script" uid="uid://cwg0x7gqofr7r" path="res://addons/2026_07_19_gdp_roller_wheel/script/roller_character_move.gd" id="1_boehi"]
+[ext_resource type="PackedScene" uid="uid://py8u1mesct4e" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_hardware_body.glb" id="2_hk5gt"]
+[ext_resource type="PackedScene" uid="uid://brl2upk7r1qgj" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_side_part.glb" id="3_d6tvf"]
+[ext_resource type="PackedScene" uid="uid://bv2kbon6v1die" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/rollo_wheel_body.glb" id="4_u2wtp"]
+[ext_resource type="PackedScene" uid="uid://bjfyr7o68vpxs" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_middle.glb" id="5_3gawu"]
+[ext_resource type="PackedScene" uid="uid://3ajef2rkvaib" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/rollo_wheel.glb" id="6_hli21"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_luvw2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_luvw2"]
+
+[node name="RolloWheelRobot" type="CharacterBody3D" unique_id=1973337089 node_paths=PackedStringArray("_character_controller", "_roll_anchor_to_rotate", "_forward_wheel_rotation_state_anchor", "_wheel_radius_center_point", "_wheel_radius_up_point")]
+script = ExtResource("1_boehi")
+_character_controller = NodePath(".")
+_roll_anchor_to_rotate = NodePath("CollisionShape1x1x1/RollAnchor")
+_forward_wheel_rotation_state_anchor = NodePath("CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot")
+_wheel_radius_center_point = NodePath("CollisionShape1x1x1/RollAnchor/CenterPointReference")
+_wheel_radius_up_point = NodePath("CollisionShape1x1x1/RollAnchor/CenterPointReference/RadiusPointReference")
+
+[node name="CollisionShape1x1x1" type="CollisionShape3D" parent="." unique_id=1117675353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_luvw2")
+
+[node name="RollAnchor" type="Node3D" parent="CollisionShape1x1x1" unique_id=2079244488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CenterPointReference" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=1633456459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="RadiusPointReference" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/CenterPointReference" unique_id=270929418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4883551, 0)
+
+[node name="Sphere1x1x1" type="MeshInstance3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=317424004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("SphereMesh_luvw2")
+
+[node name="BodyMeshes" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=876057557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="wheel_hardware_body2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=1671452679 instance=ExtResource("2_hk5gt")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+visible = false
+
+[node name="wheel_side_part2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=647788009 instance=ExtResource("3_d6tvf")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+visible = false
+
+[node name="rollo_wheel_body2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=134513591 instance=ExtResource("4_u2wtp")]
+transform = Transform3D(1.9650002, 0, 0, 0, 1.9650002, 0, 0, 0, 1.9650002, 0, -1.8626451e-09, 0)
+
+[node name="WheelAnchor" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=1078942627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="WheelPivot" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor" unique_id=1636143955]
+
+[node name="WheelMeshes" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot" unique_id=583272856]
+
+[node name="wheel_middle2" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot/WheelMeshes" unique_id=644297615 instance=ExtResource("5_3gawu")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+
+[node name="rollo_wheel2" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot/WheelMeshes" unique_id=1234885351 instance=ExtResource("6_hli21")]
+transform = Transform3D(1.965, 0, 0, 0, 1.965, 0, 0, 0, 1.965, 0, 0, 0)
+visible = false

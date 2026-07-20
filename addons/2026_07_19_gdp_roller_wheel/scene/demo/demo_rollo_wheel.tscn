@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://6jryjjpuqthx"]
+
+[ext_resource type="PackedScene" uid="uid://cyq3wlnvpdppe" path="res://addons/2026_07_19_gdp_roller_wheel/scene/prefab/prefab_rollo_basic_wheel_robot.tscn" id="1_k0nbr"]
+[ext_resource type="Script" uid="uid://crlqsdm2a5ras" path="res://addons/2026_07_19_gdp_roller_wheel/script/roller_tv_joystick_input.gd" id="2_7rdde"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_luvw2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ark1l"]
+
+[node name="DemoRolloWheel" type="Node3D" unique_id=236998065]
+
+[node name="RolloWheelRobot" parent="." unique_id=1973337089 instance=ExtResource("1_k0nbr")]
+_percent_11_back_forward = 0.10000000000000009
+_percent_11_left_right_roll = 1.0
+_max_wheel_roll_angle = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="RolloWheelRobot" unique_id=1282436339]
+transform = Transform3D(1, 0, 0, 0, 0.95511985, 0.29621977, 0, -0.29621977, 0.95511985, 0, 2.4611816, 4.3774414)
+
+[node name="Node" type="Node" parent="RolloWheelRobot" unique_id=1246445973]
+script = ExtResource("2_7rdde")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=802927667]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=354179113]
+shape = SubResource("WorldBoundaryShape3D_luvw2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="StaticBody3D/CollisionShape3D" unique_id=1977003572]
+transform = Transform3D(1, 0, 0, 0, 0.5943677, 0.80419344, 0, -0.80419344, 0.5943677, 0, 3.8427734, 4.1002502)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1574915648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.3016434)
+mesh = SubResource("BoxMesh_ark1l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=227678374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.073715)
+mesh = SubResource("BoxMesh_ark1l")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1044471016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0369873, 0, 0.06071472)
+mesh = SubResource("BoxMesh_ark1l")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=711560209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8692627, 0, 0.609848)
+mesh = SubResource("BoxMesh_ark1l")
+
+[connection signal="on_back_forward_input_changed" from="RolloWheelRobot/Node" to="RolloWheelRobot" method="set_back_forward_percent11"]
+[connection signal="on_left_right_input_changed" from="RolloWheelRobot/Node" to="RolloWheelRobot" method="set_left_right_percent11"]

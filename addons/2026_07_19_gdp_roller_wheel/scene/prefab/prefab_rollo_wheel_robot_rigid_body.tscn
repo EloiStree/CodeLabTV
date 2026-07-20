@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://de06xcpvnvlcc"]
+
+[ext_resource type="Script" uid="uid://fdbsgwxngar" path="res://addons/2026_07_19_gdp_roller_wheel/script/roller_rigidbody_move.gd" id="1_occgx"]
+[ext_resource type="PackedScene" uid="uid://py8u1mesct4e" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_hardware_body.glb" id="2_rmtit"]
+[ext_resource type="Script" uid="uid://c3c252lwlg2jk" path="res://addons/2026_07_19_gdp_roller_wheel/script/roller_input_relay.gd" id="2_vkxfd"]
+[ext_resource type="Script" uid="uid://dg13fyq52vo42" path="res://addons/2026_07_19_gdp_roller_wheel/script/roller_set_mesh_color.gd" id="3_jg8fx"]
+[ext_resource type="PackedScene" uid="uid://brl2upk7r1qgj" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_side_part.glb" id="3_vkxfd"]
+[ext_resource type="Material" uid="uid://ceegfojvknkbk" path="res://addons/2026_07_19_gdp_roller_wheel/assets/material/mat_roller_color_to_duplicate.tres" id="4_c1a5i"]
+[ext_resource type="PackedScene" uid="uid://bv2kbon6v1die" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/rollo_wheel_body.glb" id="4_jg8fx"]
+[ext_resource type="PackedScene" uid="uid://bjfyr7o68vpxs" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_middle.glb" id="5_c1a5i"]
+[ext_resource type="PackedScene" uid="uid://3ajef2rkvaib" path="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/rollo_wheel.glb" id="6_07p2o"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_luvw2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_luvw2"]
+top_radius = 0.092285156
+bottom_radius = 0.092285156
+height = 0.10028076
+
+[sub_resource type="SphereMesh" id="SphereMesh_luvw2"]
+
+[node name="RolloWheelRobotRigidBody" type="RigidBody3D" unique_id=1814612261 node_paths=PackedStringArray("_rigid_body_controller", "_roll_anchor_to_rotate", "_forward_wheel_rotation_state_anchor", "_wheel_radius_center_point", "_wheel_radius_up_point", "_forward_force_direction")]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 150.0
+continuous_cd = true
+angular_damp = 5.0
+script = ExtResource("1_occgx")
+_rigid_body_controller = NodePath(".")
+_max_speed_forward_backward = 25.0
+_roll_anchor_to_rotate = NodePath("CollisionShape1x1x1/RollAnchor")
+_forward_wheel_rotation_state_anchor = NodePath("CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot")
+_wheel_radius_center_point = NodePath("CollisionShape1x1x1/RollAnchor/CenterPointReference")
+_wheel_radius_up_point = NodePath("CollisionShape1x1x1/RollAnchor/CenterPointReference/RadiusPointReference")
+_forward_force_direction = NodePath(".")
+
+[node name="Code" type="Node" parent="." unique_id=677552718]
+
+[node name="RollerInputRelay" type="Node" parent="Code" unique_id=54254033]
+script = ExtResource("2_vkxfd")
+metadata/_custom_type_script = "uid://c3c252lwlg2jk"
+
+[node name="RollerSetMeshColor" type="Node" parent="Code" unique_id=1653395397 node_paths=PackedStringArray("_meshes_instance")]
+script = ExtResource("3_jg8fx")
+_standard_material = ExtResource("4_c1a5i")
+_meshes_instance = [NodePath("../../CollisionShape1x1x1/RollAnchor/ColorLight")]
+_color = Color(0.5759917, 0.88259655, 0.9176122, 1)
+metadata/_custom_type_script = "uid://dg13fyq52vo42"
+
+[node name="CollisionShape1x1x1" type="CollisionShape3D" parent="." unique_id=990969415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_luvw2")
+
+[node name="RollAnchor" type="Node3D" parent="CollisionShape1x1x1" unique_id=914741735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="ColorLight" type="MeshInstance3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=676451506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2130421, 0)
+mesh = SubResource("CylinderMesh_luvw2")
+
+[node name="CenterPointReference" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=431502078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="RadiusPointReference" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/CenterPointReference" unique_id=1500190045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4883551, 0)
+
+[node name="Sphere1x1x1" type="MeshInstance3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=1366909052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("SphereMesh_luvw2")
+
+[node name="BodyMeshes" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=689922986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="wheel_hardware_body2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=1671452679 instance=ExtResource("2_rmtit")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+
+[node name="wheel_side_part2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=647788009 instance=ExtResource("3_vkxfd")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+
+[node name="rollo_wheel_body2" parent="CollisionShape1x1x1/RollAnchor/BodyMeshes" unique_id=134513591 instance=ExtResource("4_jg8fx")]
+transform = Transform3D(1.9650002, 0, 0, 0, 1.9650002, 0, 0, 0, 1.9650002, 0, -1.8626451e-09, 0)
+visible = false
+
+[node name="WheelAnchor" type="Node3D" parent="CollisionShape1x1x1/RollAnchor" unique_id=1140213295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5073994, 0)
+
+[node name="WheelPivot" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor" unique_id=1593943355]
+
+[node name="WheelMeshes" type="Node3D" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot" unique_id=1716286004]
+
+[node name="wheel_middle2" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot/WheelMeshes" unique_id=644297615 instance=ExtResource("5_c1a5i")]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0, 0.02132389, 0)
+
+[node name="rollo_wheel2" parent="CollisionShape1x1x1/RollAnchor/WheelAnchor/WheelPivot/WheelMeshes" unique_id=1234885351 instance=ExtResource("6_07p2o")]
+transform = Transform3D(1.965, 0, 0, 0, 1.965, 0, 0, 0, 1.965, 0, 0, 0)
+visible = false
+
+[connection signal="on_color_updated" from="Code/RollerInputRelay" to="Code/RollerSetMeshColor" method="set_mesh_color"]
+[connection signal="on_percent_11_back_forward_changed" from="Code/RollerInputRelay" to="." method="set_back_forward_percent11"]
+[connection signal="on_percent_11_left_right_roll_changed" from="Code/RollerInputRelay" to="." method="set_left_right_percent11"]
