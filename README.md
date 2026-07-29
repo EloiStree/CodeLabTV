@@ -2,6 +2,10 @@
 
 ----------
 
+Clone on your computer:
+```
+git clone --recursive https://github.com/EloiStree/CodeLabTV.git
+```
 
 
 # CodeLabTV
