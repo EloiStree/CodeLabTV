@@ -13,3 +13,9 @@
 [submodule "addons/2026_07_20_gdp_get_ipv4_info"]
 	path = addons/2026_07_20_gdp_get_ipv4_info
 	url = https://github.com/EloiStree/2026_07_20_gdp_get_ipv4_info.git
+[submodule "addons/2026_04_11_gdp_learn_with_sensors"]
+	path = addons/2026_04_11_gdp_learn_with_sensors
+	url = https://github.com/EloiStree/2026_04_11_gdp_learn_with_sensors.git
+[submodule "addons/2026_04_27_gdp_oled_128x64"]
+	path = addons/2026_04_27_gdp_oled_128x64
+	url = https://github.com/EloiStree/2026_04_27_gdp_oled_128x64.git
