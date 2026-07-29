@@ -19,3 +19,27 @@
 [submodule "addons/2026_04_27_gdp_oled_128x64"]
 	path = addons/2026_04_27_gdp_oled_128x64
 	url = https://github.com/EloiStree/2026_04_27_gdp_oled_128x64.git
+[submodule "2026_07_29_gdp_typing_god"]
+	path = addons/2026_07_29_gdp_typing_god
+	url = https://github.com/EloiStree/2026_07_29_gdp_typing_god.git
+[submodule "2026_07_26_gdp_kiss_your_puppets"]
+	path = addons/2026_07_26_gdp_kiss_your_puppets
+	url = https://github.com/EloiStree/2026_07_26_gdp_kiss_your_puppets.git
+[submodule "addons/2026_07_30_gdp_boolean_register"]
+	path = addons/2026_07_30_gdp_boolean_register
+	url = https://github.com/EloiStree/2026_07_30_gdp_boolean_register.git
+[submodule "addons/2026_07_26_gdp_kiss_your_puppets"]
+	path = addons/2026_07_26_gdp_kiss_your_puppets
+	url = https://github.com/EloiStree/2026_07_26_gdp_kiss_your_puppets.git
+[submodule "addons/2026_07_29_gdp_typing_god"]
+	path = addons/2026_07_29_gdp_typing_god
+	url = https://github.com/EloiStree/2026_07_29_gdp_typing_god.git
+[submodule "addons/2026_07_31_gdp_load_scene_by_guid"]
+	path = addons/2026_07_31_gdp_load_scene_by_guid
+	url = https://github.com/EloiStree/2026_07_31_gdp_load_scene_by_guid.git
+[submodule "addons/2026_07_29_gdp_morse_detector"]
+	path = addons/2026_07_29_gdp_morse_detector
+	url = https://github.com/EloiStree/2026_07_29_gdp_morse_detector.git
+[submodule "addons/2025_01_01_gdp_square_color_telemetry"]
+	path = addons/2025_01_01_gdp_square_color_telemetry
+	url = https://github.com/EloiStree/2025_01_01_gdp_square_color_telemetry.git
