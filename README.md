@@ -29,7 +29,7 @@ _Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/Cod
 **F-Droid [?](https://f-droid.org/fr/docs/Submitting_to_F-Droid_Quick_Start_Guide/):** -         
 **Steam Deck:** -      
 **Ubuntu:** -   
-
+**Flatpark:** [?](https://docs.flatpak.org/en/latest/repositories.html)
 **Old PC:**   
 Window x86: -   
 Android x86: -  
