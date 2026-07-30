@@ -43,3 +43,6 @@
 [submodule "addons/2025_01_01_gdp_square_color_telemetry"]
 	path = addons/2025_01_01_gdp_square_color_telemetry
 	url = https://github.com/EloiStree/2025_01_01_gdp_square_color_telemetry.git
+[submodule "addons/2026_07_29_gdp_display_git_module_info"]
+	path = addons/2026_07_29_gdp_display_git_module_info
+	url = https://github.com/EloiStree/2026_07_29_gdp_display_git_module_info.git
