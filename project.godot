@@ -12,9 +12,14 @@ config_version=5
 
 config/name="Code Lab TV"
 config/description="An application to learn code from mini game on Android TVs. No input, only code."
+config/version="2026.7.31"
 run/main_scene="uid://cty7dvxlw3vay"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.08235294, 0.08235294, 0.08235294, 0)
+boot_splash/stretch_mode=3
+boot_splash/image="uid://blmqkts08jlen"
+config/icon="uid://phsmenluqmgt"
+boot_splash/minimum_display_time=4000
 
 [display]
 
@@ -24,6 +29,7 @@ window/size/mode=3
 window/size/initial_position_type=3
 window/size/initial_screen=2
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [physics]
 
@@ -31,9 +37,11 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.3019608, 0.3019608, 0.3019608, 0)
 viewport/transparent_background=true

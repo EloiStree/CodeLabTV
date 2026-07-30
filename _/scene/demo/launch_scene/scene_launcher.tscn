@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://pyiusioc6c1r" path="res://_/script/labtv_hello_42_skill_check.gd" id="7_sq4xf"]
 [ext_resource type="PackedScene" uid="uid://bsvv0xx3cbmxt" path="res://_/scene/demo/hello_world_checked/scene_hello_world_checked.tscn" id="8_3pb37"]
 [ext_resource type="PackedScene" uid="uid://bin0sxy3l2kiu" path="res://addons/2025_10_28_gdp_trusted_websocket/scenes/prefab/prefab_tbio_ws_default_server.tscn" id="9_fqkjn"]
+[ext_resource type="Texture2D" uid="uid://blmqkts08jlen" path="res://_/2d/icon/hello_godot_android_in_tv.png" id="9_vc65h"]
+[ext_resource type="Script" uid="uid://ccyqbr8uqahev" path="res://addons/2026_07_31_gdp_load_scene_by_guid/script/guidload_load_project_guid_txt_as_static.gd" id="11_m3g50"]
+[ext_resource type="PackedScene" uid="uid://ctrjp4fi4ywn8" path="res://addons/2026_07_31_gdp_load_scene_by_guid/scene/prefab/prefab_2d_control_load_level_from_guid.tscn" id="12_8cdyi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_luvw2"]
 font_size = 22
@@ -33,7 +36,20 @@ metadata/_custom_type_script = "uid://yxfimt0e7o0b"
 script = ExtResource("3_m3g50")
 metadata/_custom_type_script = "uid://bya86h4uvfpnl"
 
-[node name="Control" type="Control" parent="." unique_id=1817355810]
+[node name="CodeLabTvHello42SkillCheck" type="Node" parent="." unique_id=1918497601]
+script = ExtResource("7_sq4xf")
+scene_to_load = ExtResource("8_3pb37")
+metadata/_custom_type_script = "uid://pyiusioc6c1r"
+
+[node name="TbioWsDefaultServer" parent="." unique_id=705473434 instance=ExtResource("9_fqkjn")]
+
+[node name="GuidLoadProjectGuidTxtAsStatic" type="Node" parent="." unique_id=1880928436]
+script = ExtResource("11_m3g50")
+metadata/_custom_type_script = "uid://ccyqbr8uqahev"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=453654509]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1817355810]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=481773390]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=481773390]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Control/ColorRect" unique_id=2117451317]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/ColorRect" unique_id=2117451317]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
@@ -60,16 +76,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ColorRect/ColorRect2" unique_id=1818163893]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=1818163893]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7161459
-anchor_top = 0.43055555
-anchor_right = 0.9921876
-anchor_bottom = 0.7731481
+anchor_left = 0.6619367
+anchor_top = 0.4306984
+anchor_right = 0.9972722
+anchor_bottom = 0.99178
 offset_left = 9.299927
-offset_top = -1.499939
-offset_right = 9.299927
+offset_top = 23.348877
+offset_right = -0.6673584
 offset_bottom = -1.4998779
 grow_horizontal = 2
 grow_vertical = 2
@@ -78,7 +94,23 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control/ColorRect/ColorRect2" unique_id=369704269]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=1917437789]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67487246
+anchor_top = 0.4564815
+anchor_right = 0.9806335
+anchor_bottom = 0.98885185
+offset_left = 5.959961
+offset_top = -0.9399414
+offset_right = 5.6400146
+offset_bottom = -0.89990234
+texture = ExtResource("9_vc65h")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=369704269]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,7 +136,7 @@ To show that you understand.
 By sending the text \"Hello World\"
 Or the byte `42`"
 
-[node name="LearnMoreUrlQR" type="Control" parent="Control/ColorRect/ColorRect2" unique_id=575910836]
+[node name="LearnMoreUrlQR" type="Control" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=575910836]
 layout_mode = 1
 anchor_left = 0.70000005
 anchor_right = 0.99700004
@@ -114,7 +146,7 @@ offset_top = -10.8
 offset_right = 7.4399414
 offset_bottom = -10.639984
 
-[node name="TextureRect" type="TextureButton" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1560963146]
+[node name="TextureRect" type="TextureButton" parent="CanvasLayer/Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1560963146]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -126,12 +158,12 @@ texture_normal = ExtResource("4_8cdyi")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LabTvOpenUrl" type="Node" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" unique_id=640095119]
+[node name="LabTvOpenUrl" type="Node" parent="CanvasLayer/Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" unique_id=640095119]
 script = ExtResource("6_rktb2")
 _url_to_open = "https://github.com/EloiStree/CodeLabTV/wiki"
 metadata/_custom_type_script = "uid://esy5e1gvr8ny"
 
-[node name="LearnMoreURL" type="Label" parent="Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1974246567]
+[node name="LearnMoreURL" type="Label" parent="CanvasLayer/Control/ColorRect/ColorRect2/LearnMoreUrlQR" unique_id=1974246567]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -143,7 +175,7 @@ label_settings = SubResource("LabelSettings_luvw2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect/ColorRect2" unique_id=419513987]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=419513987]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.86
@@ -156,25 +188,25 @@ offset_bottom = 7.895874
 accessibility_region = true
 metadata/_edit_use_anchors_ = true
 
-[node name="LabelText" type="Label" parent="Control/ColorRect/ColorRect2/HBoxContainer" unique_id=1218991386]
+[node name="LabelText" type="Label" parent="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer" unique_id=1218991386]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 
-[node name="LabelByte" type="Label" parent="Control/ColorRect/ColorRect2/HBoxContainer" unique_id=357393468]
+[node name="LabelByte" type="Label" parent="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer" unique_id=357393468]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 
-[node name="Code" type="Node" parent="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" unique_id=1013896800]
+[node name="Code" type="Node" parent="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" unique_id=1013896800]
 script = ExtResource("6_lcgs8")
 metadata/_custom_type_script = "uid://bllyrren6tpgy"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/ColorRect2" unique_id=10027370]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/ColorRect/ColorRect2" unique_id=10027370]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.38333333
-anchor_right = 0.65000004
+anchor_right = 0.37893283
 anchor_bottom = 0.99600005
 offset_left = -19.199999
 offset_top = -2.519928
@@ -196,21 +228,18 @@ _Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/Cod
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="CodeLabTvHello42SkillCheck" type="Node" parent="." unique_id=1918497601]
-script = ExtResource("7_sq4xf")
-scene_to_load = ExtResource("8_3pb37")
-metadata/_custom_type_script = "uid://pyiusioc6c1r"
-
-[node name="TbioWsDefaultServer" parent="." unique_id=705473434 instance=ExtResource("9_fqkjn")]
+[node name="Control Load level From GUID" parent="CanvasLayer" unique_id=189677241 instance=ExtResource("12_8cdyi")]
+anchor_right = 0.70900005
+offset_right = -0.28015137
 
 [connection signal="timeout" from="PushUdpOutToTargets/Timer" to="PushUdpOutToTargets" method="push_random_text_and_byte"]
-[connection signal="on_message_received" from="UdpThreadDispatcherByte" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" method="push_byte_packed_to_debug"]
 [connection signal="on_message_received" from="UdpThreadDispatcherByte" to="CodeLabTvHello42SkillCheck" method="check_for_specific_byte_pack_as_integer"]
-[connection signal="message_received" from="UdpThreadDispatcherUtf8" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelText" method="set_text"]
+[connection signal="on_message_received" from="UdpThreadDispatcherByte" to="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" method="push_byte_packed_to_debug"]
 [connection signal="message_received" from="UdpThreadDispatcherUtf8" to="CodeLabTvHello42SkillCheck" method="check_for_specific_text"]
-[connection signal="button_down" from="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" to="Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect/LabTvOpenUrl" method="open_url_in_inspector"]
-[connection signal="on_debug_last_byte_packed" from="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" to="Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" method="set_text"]
+[connection signal="message_received" from="UdpThreadDispatcherUtf8" to="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer/LabelText" method="set_text"]
 [connection signal="on_received_byte" from="TbioWsDefaultServer/TbioWsJoinPeersIdAsOnePeer" to="CodeLabTvHello42SkillCheck" method="check_for_specific_byte_pack_as_integer"]
 [connection signal="on_received_text" from="TbioWsDefaultServer/TbioWsJoinPeersIdAsOnePeer" to="CodeLabTvHello42SkillCheck" method="check_for_specific_text"]
+[connection signal="button_down" from="CanvasLayer/Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect" to="CanvasLayer/Control/ColorRect/ColorRect2/LearnMoreUrlQR/TextureRect/LabTvOpenUrl" method="open_url_in_inspector"]
+[connection signal="on_debug_last_byte_packed" from="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer/LabelByte/Code" to="CanvasLayer/Control/ColorRect/ColorRect2/HBoxContainer/LabelByte" method="set_text"]
 
 [editable path="TbioWsDefaultServer"]

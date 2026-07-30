@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://l8ywpf88875q"]
+
+[ext_resource type="PackedScene" uid="uid://ck3hwj5udpgtb" path="res://addons/2026_07_20_gdp_get_ipv4_info/scene/prefab/prefab_label_local_ipv4_joined.tscn" id="1_ud1lp"]
+[ext_resource type="PackedScene" uid="uid://b2p4eairmh2cw" path="res://addons/2026_07_20_gdp_get_ipv4_info/scene/prefab/prefab_label_public_ipv4.tscn" id="2_mxwuh"]
+
+[node name="DemoUi2dIpv4Fetch" type="Node3D" unique_id=916396511]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1638107733]
+
+[node name="LabelLocalIpv4Joined" parent="CanvasLayer" unique_id=1398720084 instance=ExtResource("1_ud1lp")]
+
+[node name="LabelPublicIpv4" parent="CanvasLayer" unique_id=1042230755 instance=ExtResource("2_mxwuh")]

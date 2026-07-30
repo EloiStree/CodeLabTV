@@ -1,0 +1,4 @@
+EXXwvLqyvBpdjzb27mVrBuwtkTvKRTzDKyvyMKfo6ujm
+Display the IPv4  
+Display the device IPv4 public and local ip.  
+This demo, show how you can display local ips, public ip and check for mDNS around.   
