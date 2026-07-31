@@ -46,3 +46,6 @@
 [submodule "addons/2026_07_29_gdp_display_git_module_info"]
 	path = addons/2026_07_29_gdp_display_git_module_info
 	url = https://github.com/EloiStree/2026_07_29_gdp_display_git_module_info.git
+[submodule "addons/2026_05_09_gdp_esp32s3_webcam"]
+	path = addons/2026_05_09_gdp_esp32s3_webcam
+	url = https://github.com/EloiStree/2026_05_09_gdp_esp32s3_webcam
