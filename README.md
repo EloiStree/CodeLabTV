@@ -3,6 +3,8 @@
 **Coded:** On Steam Machine 📦   
 **Tested:** On Pi 5🍇 and Android TV 📺   
 
+See [GOMI](https://github.com/EloiStree/GOMI) if you want to play to CodeLabTV without learning to code.
+
 ----------
 
 Clone on your computer:
