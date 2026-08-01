@@ -35,5 +35,6 @@ _Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/Cod
 **Ubuntu:** -   
 **Flatpark:** [?](https://docs.flatpak.org/en/latest/repositories.html)
 **Old PC:**   
+**GOG** [?](https://www.gog.com/en/):
 Window x86: -   
 Android x86: -  
