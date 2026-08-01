@@ -1,5 +1,10 @@
 **Ideal Workflow:** [Create for TV](https://github.com/EloiStree/CodeLabTV) > [Test on XR](https://github.com/EloiStree/CodeLabXR)  > [Tournament in Cinema](https://github.com/EloiStree/CodeLabCinema)
 
+**Coded:** On Steam Machine 📦   
+**Tested:** On Pi 5🍇 and Android TV 📺   
+
+See [GOMI](https://github.com/EloiStree/GOMI) if you want to play to CodeLabTV without learning to code.
+
 ----------
 
 Clone on your computer:
@@ -36,5 +41,6 @@ _Following the same philosophy, [CodeLabCinema](https://github.com/EloiStree/Cod
 **Ubuntu:** -   
 **Flatpark:** [?](https://docs.flatpak.org/en/latest/repositories.html)
 **Old PC:**   
+**GOG** [?](https://www.gog.com/en/):
 Window x86: -   
 Android x86: -  
