@@ -1,5 +1,8 @@
 **Ideal Workflow:** [Create for TV](https://github.com/EloiStree/CodeLabTV) > [Test on XR](https://github.com/EloiStree/CodeLabXR)  > [Tournament in Cinema](https://github.com/EloiStree/CodeLabCinema)
 
+**Coded:** On Steam Machine 📦   
+**Tested:** On Pi 5🍇 and Android TV 📺   
+
 ----------
 
 Clone on your computer:
