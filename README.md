@@ -7,7 +7,8 @@ Clone on your computer:
 git clone --recursive https://github.com/EloiStree/CodeLabTV.git
 ```
 
-
+ 
+ 
 # CodeLabTV
 
 Designed for Android TV, this application lets you learn coding by playing a collection of small games directly on your TV.     
