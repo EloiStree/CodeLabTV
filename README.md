@@ -10,6 +10,9 @@ See [GOMI](https://github.com/EloiStree/GOMI) if you want to play to CodeLabTV w
 Clone on your computer:
 ```
 git clone --recursive https://github.com/EloiStree/CodeLabTV.git
+cd CodeLabTV
+git submodule foreach 'git switch main'
+
 ```
 
  
