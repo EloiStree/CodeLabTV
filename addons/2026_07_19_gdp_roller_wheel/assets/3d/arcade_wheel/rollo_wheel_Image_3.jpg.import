@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byltefvqsmex1"
-path.s3tc="res://.godot/imported/rollo_wheel_Image_3.jpg-798b491e2f7a48bd0d2341c494298dbf.s3tc.ctex"
 path.etc2="res://.godot/imported/rollo_wheel_Image_3.jpg-798b491e2f7a48bd0d2341c494298dbf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/rollo_wheel_Image_3.jpg"
-dest_files=["res://.godot/imported/rollo_wheel_Image_3.jpg-798b491e2f7a48bd0d2341c494298dbf.s3tc.ctex", "res://.godot/imported/rollo_wheel_Image_3.jpg-798b491e2f7a48bd0d2341c494298dbf.etc2.ctex"]
+dest_files=["res://.godot/imported/rollo_wheel_Image_3.jpg-798b491e2f7a48bd0d2341c494298dbf.etc2.ctex"]
 
 [params]
 

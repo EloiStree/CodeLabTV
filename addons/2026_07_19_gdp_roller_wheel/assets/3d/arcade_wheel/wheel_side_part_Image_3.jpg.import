@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpkkq82g17hgj"
-path.s3tc="res://.godot/imported/wheel_side_part_Image_3.jpg-78d0c6fff71f49858c3bed548d98b5dc.s3tc.ctex"
 path.etc2="res://.godot/imported/wheel_side_part_Image_3.jpg-78d0c6fff71f49858c3bed548d98b5dc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/2026_07_19_gdp_roller_wheel/assets/3d/arcade_wheel/wheel_side_part_Image_3.jpg"
-dest_files=["res://.godot/imported/wheel_side_part_Image_3.jpg-78d0c6fff71f49858c3bed548d98b5dc.s3tc.ctex", "res://.godot/imported/wheel_side_part_Image_3.jpg-78d0c6fff71f49858c3bed548d98b5dc.etc2.ctex"]
+dest_files=["res://.godot/imported/wheel_side_part_Image_3.jpg-78d0c6fff71f49858c3bed548d98b5dc.etc2.ctex"]
 
 [params]
 
