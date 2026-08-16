@@ -49,3 +49,9 @@
 [submodule "addons/2026_05_09_gdp_esp32s3_webcam"]
 	path = addons/2026_05_09_gdp_esp32s3_webcam
 	url = https://github.com/EloiStree/2026_05_09_gdp_esp32s3_webcam
+[submodule "addons/2026_08_01_gdp_s2w_parser"]
+	path = addons/2026_08_01_gdp_s2w_parser
+	url = https://github.com/EloiStree/2026_08_01_gdp_s2w_parser.git
+[submodule "addons/2026_08_05_gdp_agarium_65m"]
+	path = addons/2026_08_05_gdp_agarium_65m
+	url = https://github.com/EloiStree/2026_08_05_gdp_agarium_65m.git
